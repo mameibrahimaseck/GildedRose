@@ -71,9 +71,11 @@ class GildedRose {
 
     private void decreaseQuality(Item item){
         if (item.quality > 0) {
-            item.quality = itemsToDecreaseTweece.contains(item.name) ? item.quality - 2 : item.quality - 1;
+            item.quality = itemsToDecreaseTweece.contains(item.name) ? qualityCheck(item.quality - 2) : item.quality - 1;
         }
+    }
 
-        item.quality = item.quality < 0 ?  0 : item.quality;
+    private int qualityCheck(int quality){
+        return quality < 0 ? 0 : quality;
     }
 }
