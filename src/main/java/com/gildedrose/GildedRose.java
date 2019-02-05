@@ -73,5 +73,7 @@ class GildedRose {
         if (item.quality > 0) {
             item.quality = itemsToDecreaseTweece.contains(item.name) ? item.quality - 2 : item.quality - 1;
         }
+
+        item.quality = item.quality < 0 ?  0 : item.quality;
     }
 }
